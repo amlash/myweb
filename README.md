@@ -1,2 +1,2 @@
 # myweb
-this page will be cuild soon
+this page will be build soon
