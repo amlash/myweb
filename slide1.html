@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<META HTTP-EQUIV="Content-Disposition" CONTENT="attachment; filename=type70.pdf">
+<html>
+<head>
+AddType application/octet-stream .csv
+AddType application/octet-stream .xls
+AddType application/octet-stream .doc
+AddType application/octet-stream .avi
+AddType application/octet-stream .mpg
+AddType application/octet-stream .mov
+AddType application/octet-stream .pdf
+</head>
+<body>
+
+<script>  
+var i=0;
+var lastnum=11;
+var images1="next.jpg";  
+var ftag;
+var etag="</a>";
+var mylink;
+var mylink1;
+function myimg1(){images1="mypages"+(i+1)+".jpg";
+document.getElementById("demo1").innerHTML="Heey";
+ document.getElementById("slide").src=images1;}
+function myimg(){
+
+ var mypage="mypages"+i+".jpg";
+ ftag='<a  href="'+mypage+'">'+i+etag;
+ mylink='<a href="javascript : myimg1();">'+(i-1)+etag;
+ mylink1='<p onclick=" myimg1();" >'+(i+1)+'</p>';
+ document.getElementById("slide").src=images;
+if(i>2 && i<10){
+document.getElementById("nummy").innerHTML=(i-2)+" "+mylink+" "+ftag+" "+mylink1+" "+(i+2); }
+document.getElementById("demo1").innerHTML=images+" , "; }
+function addpage(){
+if(i==lastnum){i=lastnum;}else{
+i++;}
+images="mypages"+i+".jpg";
+myimg();}
+function subpage(){
+i--;
+if(i==0){i=1;}
+images="mypages"+i+".jpg";
+myimg();}
+ function downloadme(x){
+    document.getElementById("demo1").innerHTML=" it came now";
+// var   myTempWindow = window.open(x,’’,’left=10000,screenX=10000’);
+  //  myTempWindow.document.execCommand(’SaveAs’,’null’,x);
+    myTempWindow.close();
+//  href=javascript : downloadme("type70.pdf");
+}
+</script>
+<table><tr><td>
+<img id="slide" src="mypages1.jpg" width="800" height="400"></td></tr><tr><table><tr><td>
+<button onclick="subpage()"><img src="prev.jpg"></button></td><td  id="nummy" align="center"  width="515"></td><td>
+<button onclick="addpage()">></button></td></tr></table></tr></table>
+<a href="dltype70.zip" download="dlbook"><img src="ketab.jpg"></a>
+<p id="demo">HERE</p><p id="demo1">NotHERE</p>
+</body></html>
