@@ -5,6 +5,38 @@
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.<br>
 <h3> Why it does not work?</h3><br>
+  
+<script>  
+var i=0;
+var lastnum=11;
+var images1="next.jpg";  
+var ftag;
+var etag="</a>";
+var mylink;
+var mylink1;
+function myimg1(){images1="mypages"+(i+1)+".jpg";
+document.getElementById("demo1").innerHTML="Heey";
+ document.getElementById("slide").src=images1;}
+function myimg(){
+
+ var mypage="mypages"+i+".jpg";
+ ftag='<a  href="'+mypage+'">'+i+etag;
+ mylink='<a href="javascript : myimg1();">'+(i-1)+etag;
+ mylink1='<p onclick=" myimg1();" >'+(i+1)+'</p>';
+ document.getElementById("slide").src=images;
+if(i>2 && i<10){
+document.getElementById("nummy").innerHTML=(i-2)+" "+mylink+" "+ftag+" "+mylink1+" "+(i+2); }
+document.getElementById("demo1").innerHTML=images+" , "; }
+function addpage(){
+if(i==lastnum){i=lastnum;}else{
+i++;}
+images="mypages"+i+".jpg";
+myimg();}
+function subpage(){
+i--;
+if(i==0){i=1;}
+images="mypages"+i+".jpg";
+myimg();}
   Matt</p>
 </body>
 </html>
