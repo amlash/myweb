@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>html start page</title>
+</head>
+<body>
+<!--     comment    -->
+<form>
+<input type="text" size="30" id="num1"><br>
+<input type="text" size="30" id="num2"><br>
+<input type="text" size="30" id="num3"><br>
+<input type="text" size="30" id="num4"><br></form>
+<table><tr><td>
+<table>
+<tr><td>
+<button onclick="mynum(1) ">1</button></td><td>
+<button onclick="mynum(2)">2</button></td><td>
+<button onclick="mynum(3)">3</button></td></tr>
+<tr><td>
+<button onclick="mynum(4) ">4</button></td><td>
+<button onclick="mynum(5)">5</button></td><td>
+<button onclick="mynum(6)">6</button></td></tr>
+<tr><td>
+<button onclick="mynum(7) ">7</button></td><td>
+<button onclick="mynum(8)">8</button></td><td>
+<button onclick="mynum(9)">9</button></td></tr>
+<tr><td>
+</td><td>
+<button onclick="mynum(0)">0</button></td><td>
+</td></tr>
+</table></td>
+</td><td>
+<table></td><td>
+<table>
+<tr><td><button onclick=" enter(plus)">+</button></td></tr>
+<tr><td><button onclick=" enter(minus)">-</button></td></tr>
+<tr><td><button onclick=" enter(mult)">*</button></td></tr>
+<tr><td><button onclick=" enter(div)">/</button></td></tr>
+<tr><td><button onclick="Functione(eql1)">=</button></td></tr>
+</table></td></tr></table>
+<button onclick="enter(entery)">Enter</button>
+<td><button onclick="enter(c)">c</button></td>
+<script>
+var n; numenter=0; alamat=""; entery="enter"; plus="plus";minus="minus";mult="mult";div="div";c="c";
+var  numhold1=numhold2=numhold3=numhold4=0; result;
+function mynum(n) {
+//  document.getElementById("num1").value="";
+ numenter=numenter*10+n
+ document.getElementById("num1").value =numenter;
+ }
+
+ function changenum(){
+// if(entery=="enter" ||entery=="plus" || entery=="minus"||entery=="mult"||entery=="div"){
+  numhold4=numhold3;
+  numhold3=numhold2;
+  document.getElementById("num4").value =numhold3;
+  numhold2=numhold1; 
+  document.getElementById("num3").value =numhold2;                          
+  numhold1=result; 
+  document.getElementById("num2").value =numhold1;
+// }
+ numenter=0;
+}
+function enter(entery){
+
+alamat=entery;
+// document.getElementById("num4").value =entery;
+switch(entery){
+case "plus":
+result=numenter+numhold1;
+document.getElementById("num1").value =result;
+numhold1=result;
+numenter=0;
+changenum();
+ break;
+case "div":
+if(numhold1=="" || numhold1==0){
+numhold1=result=numenter;
+
+changenum();}
+result=numhold1/numenter;
+document.getElementById("num1").value =result;
+numhold1=result;
+numenter=0;
+changenum();
+break;
+case "mult":
+result=numenter*numhold1;
+document.getElementById("num1").value =result;
+// numhold1=result;
+break;
+case "minus":
+result=numenter-numhold1;
+document.getElementById("num1").value =result;
+break;
+case "sin":
+result=Math.sin(numenter*Math.PI/180);
+document.getElementById("num1").value =result;
+break;
+case "cos":
+result=Math.cos(numebter*Math.PI/180);
+document.getElementById("num1").value =result;
+break;
+case "log":
+result=Math.log10(numenter);
+document.getElementById("num1").value =result;
+break;
+ case "c":
+ result=0;
+numenter=numhold=numhold1=numhold2=numhold3=numhold4=0;
+ // document.getElementById("num1").value =result;
+ break;
+case "x":
+result=1/numenter;
+document.getElementById("num1").value =result;
+break;
+case "np":
+result=-1*numenter;
+document.getElementById("num1").value= result;
+break;
+case "ce":
+// numenter=numhold1=numhold2=numhold4=numhold3=0;
+break;
+}
+}
+
+</script>
+</body>
+</html>
